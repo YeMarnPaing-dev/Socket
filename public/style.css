@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Socket.IO Test</title>
-  <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"
-          integrity="sha384-mkQ3/7FUtcGyoppY6bz/PORYoGqOl7/aSUMn2ymDOJcapfS6PHqxhRTMh1RR0Q6+"
-          crossorigin="anonymous"></script>
 
-          <style>
-            
 body {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(135deg, #74ebd5, #acb6e5);
@@ -121,28 +110,3 @@ body {
   border-radius: 10px;
 }
 
-
-          </style>
-
-</head>
-<body>
-
-  <div id="app">
-    <h2>YM Chat App</h2>
-    <div id="chat-window">
-        <div id="output"></div>
-        <div id="feedback"></div>
-    </div>
-    <input type="text" placeholder="Name" id="name">
-    <input type="text" placeholder="Message" id="message">
-    <input type="button" value="Send" id="send">
-
-  </div>
-
-
-<script>
-  const socket = io('http://localhost:4000');
-</script>
-
-</body>
-</html>
