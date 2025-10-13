@@ -143,7 +143,17 @@ body {
 
 <script>
   const socket = io('http://localhost:4000');
+  let output=document.getElementById('output');
+  let feedback=document.getElementById('feedback');
+  let message=document.getElementById('message');
+  let name=document.getElementById('name');
+  let send=document.getElementById('send');
+
+  send.addEventListener('click',()=>{
+    console.log(name.value,message.value);    
+  })
 </script>
+
 
 </body>
 </html>
