@@ -1,5 +1,5 @@
 let express =require('express')
-let socket=require('socket.io')
+let socketio=require('socket.io')
 
 // app setup
 let app=express()
@@ -14,7 +14,11 @@ app.get('/',(res,req)=>{
 });
 
 // socket setup 
-let io=socket(server)
-io.on('connection',(socket)=>{
-    console.log('socket connection connected');    
-})
+let io=socketio(server)
+io.on('connection', (socket) => {
+    console.log('Socket connected:', socket.id);
+
+    socket.on('disconnect', () => {
+        console.log('Socket disconnected:', socket.id);
+    });
+});
