@@ -159,7 +159,9 @@ body {
 
   // listen event 
   socket.on('chat',(data)=>{
-    console.log(data);
+   output.innerHTML+=`<p><strong>${data.name}</strong> : ${data.message}</p>`;
+   name.value='';
+   message.value='';
     
   })
 </script>
