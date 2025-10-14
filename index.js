@@ -17,8 +17,14 @@ app.get('/',(res,req)=>{
 let io=socketio(server)
 io.on('connection', (socket) => {
    socket.on('chat',(data)=>{
-    console.log(data);
+    
     io.sockets.emit('chat',data);
+   });
+
+    socket.on('typing',(name)=>{
+        console.log(name);
+            
+    // io.sockets.emit('chat',data);
    });
 
     // socket.on('disconnect', () => {
