@@ -18,8 +18,8 @@ let io=socketio(server)
 io.on('connection', (socket) => {
    socket.on('chat',(data)=>{
     console.log(data);
-    
-   })
+    io.sockets.emit('chat',data);
+   });
 
     socket.on('disconnect', () => {
         console.log('Socket disconnected:', socket.id);
