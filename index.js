@@ -22,9 +22,7 @@ io.on('connection', (socket) => {
    });
 
     socket.on('typing',(name)=>{
-        console.log(name);
-            
-    // io.sockets.emit('chat',data);
+       socket.broadcast.emit('typing',name);
    });
 
     // socket.on('disconnect', () => {

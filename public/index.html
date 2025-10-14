@@ -149,6 +149,7 @@ body {
   let name=document.getElementById('name');
   let send=document.getElementById('send');
 
+
   send.addEventListener('click',()=>{
     let data={
       name:name.value,
@@ -167,6 +168,10 @@ body {
    name.value='';
    message.value='';
     
+  })
+
+    socket.on('typing',(name)=>{
+      feedback.innerHTML=`<p><em>${name} is typing....</em></p>`;
   })
 </script>
 
