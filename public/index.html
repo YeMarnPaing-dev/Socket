@@ -150,7 +150,11 @@ body {
   let send=document.getElementById('send');
 
   send.addEventListener('click',()=>{
-    console.log(name.value,message.value);    
+    let data={
+      name:name.value,
+      message:message.value
+    }
+    socket.emit('chat',data)
   })
 </script>
 

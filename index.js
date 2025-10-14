@@ -16,7 +16,10 @@ app.get('/',(res,req)=>{
 // socket setup 
 let io=socketio(server)
 io.on('connection', (socket) => {
-    console.log('Socket connected:', socket.id);
+   socket.on('chat',(data)=>{
+    console.log(data);
+    
+   })
 
     socket.on('disconnect', () => {
         console.log('Socket disconnected:', socket.id);
